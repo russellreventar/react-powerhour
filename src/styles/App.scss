@@ -1,0 +1,153 @@
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i');
+
+$bg-blue: #FBFCFF;
+$blue: #2778EF;
+$header-height: 60px;
+$light-grey: #f8f8f8;
+$grey: #949494;
+$dark-grey: #4E4E4E;
+
+@import './override';
+
+.icon {
+  width: 30px;
+  &-click{
+    cursor: pointer;
+  }
+}
+
+.sidebar {
+  height: $header-height;
+  position: absolute;
+  display: flex;
+  z-index: 10;
+  &-panel {
+    color:$dark-grey;
+    height: 100%;
+    width: 220px;
+    background: $light-grey;
+    position: fixed;
+    left: -220px;
+    
+    &--open {
+      box-shadow: 8px 0px 6px 0px rgba(95, 95, 95, 0.51);
+      left: 0px;
+    }
+  }
+
+  &-header {
+    height: $header-height;
+    display: flex;
+    border-bottom: 1px solid $blue;
+    padding: 15px;
+    font-weight: 800;
+    font-size: 20px;
+
+    img {
+      margin-left: auto;
+    }
+  }
+
+  .icon-open {
+    margin-left: 15px;
+  }
+
+  ul {
+    li {
+      font-weight: 600;
+      margin-top: 25px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid $grey;
+    }
+  }
+}
+
+header {
+  height: $header-height;
+  width: 100%;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    max-width: 50%;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    border: 1px solid white;
+    width: 200px;
+    height: 70%;
+    padding-top: 8px;
+  }
+}
+
+.section {
+  
+  margin-top: 60px;
+
+  &__header {
+    p {
+      margin-bottom: 0px;
+    }
+  }
+  
+  h3 {
+    cursor: pointer;
+    margin-bottom: 2px;
+  }
+
+  .section-number {
+    letter-spacing: 0px;
+    color: $blue;
+  }
+
+  .icon {
+    width: 18px;
+    margin-right: 10px;
+    opacity: 0.5;
+  }
+
+  .description {
+    margin-left: 80px;
+  }
+
+  section {
+    display: block;
+    border: 1px solid grey;
+    border-radius: 4px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 15px;
+  }
+}
+
+.demo-page {
+
+  &__header {
+
+    .title {
+      display: flex;
+      align-items: center;
+      font-size: 50px;
+      font-weight: 600;
+    }
+    .num {
+      border: 5px solid $blue;
+      width: 55px;
+      border-radius: 30px;
+      text-align: center;
+      line-height: 45px;
+      margin-right: 15px;
+      font-weight: 500;
+      font-size: 35px;
+    }
+  
+    p {
+      padding-left: 75px;
+    }
+  }
+}
+
+@import './portals';

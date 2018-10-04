@@ -1,0 +1,50 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  background-color: $light-grey;
+  letter-spacing: 0.5px;
+}
+
+p {
+  color: $grey;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: $dark-grey;
+  &:hover {
+    color: $blue;
+  }
+}
+
+main {
+  padding: 35px;
+}
+
+dl {
+  dt {
+    font-size: 20px;
+  }
+
+  dd {
+    margin-left: 20px;
+    background-color: $light-grey;
+    padding: 5px;
+  }
+}
+
+table {
+  @extend .table;
+  thead {
+    th {
+      border-left: 1px solid #dee2e6;
+    }
+  }
+}
+
+button {
+  @extend .btn
+}
