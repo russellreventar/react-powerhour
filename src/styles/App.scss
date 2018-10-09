@@ -10,6 +10,14 @@ $dark-grey: #4E4E4E;
 
 @import './override';
 
+#check:checked {
+  ~#t1 {
+    background-color: $blue;
+  }
+  ~#t2 {
+    background-color: $grey;
+  }
+}
 .icon {
   width: 30px;
   &-click{
@@ -25,10 +33,10 @@ $dark-grey: #4E4E4E;
   &-panel {
     color:$dark-grey;
     height: 100%;
-    width: 220px;
+    width: 280px;
     background: $light-grey;
     position: fixed;
-    left: -220px;
+    left: -280px;
     
     &--open {
       box-shadow: 8px 0px 6px 0px rgba(95, 95, 95, 0.51);
@@ -150,4 +158,33 @@ header {
   }
 }
 
+.profiler {
+  section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .count {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $grey;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  .inc {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: 60px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+}
+
 @import './portals';
+@import './hocs';
+@import './renderProps';

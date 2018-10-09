@@ -6,13 +6,13 @@ import DemoContent from './../../components/DemoContent';
 export default ({demoNumber, demo}) => {
   const sections = [
     {
-      title: 'Table Headers',
-      description: 'A Basic Header',
+      title: 'Alert popup',
+      description: 'Popup is cut off due to parents overflow:hidden;',
       render: () => <Portals1/>,
     },
     {
-      title: "Table Headers using Portals",
-      description: 'Pull headers out into its own component',
+      title: "Alert popup transported",
+      description: 'Transport the modal to the body using Portals',
       render: () => <Portals2/>,
     },
   ];

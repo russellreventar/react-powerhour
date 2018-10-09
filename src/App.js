@@ -6,6 +6,10 @@ import Fragment from './demos/fragment';
 import Context from './demos/context';
 import ErrorBoundary from './demos/errorBoundary';
 import Portals from './demos/portals';
+import HigherOrderComp from './demos/higherOrderComp';
+import RenderProps from './demos/renderProps';
+import UpdateLifecycle from './demos/updatedLifecycle';
+import Profiler from './demos/profiler';
 import openImage from './assets/white-right-arrow.svg';
 import closeImage from './assets/left-arrow.svg';
 
@@ -13,7 +17,11 @@ const demosOrder = [
   'fragment',
   'context',
   'errorBoundary',
-  'portals'
+  'portals',
+  'higherOrderComp',
+  'renderProps',
+  'profiler',
+  'updatedLifecycle'
 ]
 
 const demos = {
@@ -48,6 +56,38 @@ const demos = {
     route: '/portals',
     version: '16.4.3',
     Component: Portals,
+  },
+  higherOrderComp: {
+    id: 'higherOrderComp',
+    title: 'Higher-Order Components',
+    description: 'Technique to reuse component logic',
+    route: '/higher-order-components',
+    version: '16.4.3',
+    Component: HigherOrderComp,
+  },
+  renderProps: {
+    id: 'renderProps',
+    title: 'Render Props',
+    description: 'Technique to reuse component logic',
+    route: '/render-props',
+    version: '16.4.3',
+    Component: RenderProps,
+  },
+  updatedLifecycle: {
+    id: 'updatedLifecycle',
+    title: 'Updated Lifecycle Methods',
+    description: 'componentWillRecieveProps  !==  getDerivedStateFromProps',
+    route: '/updated-lifecycle',
+    version: '16.4.3',
+    Component: UpdateLifecycle,
+  },
+  profiler: {
+    id: 'profiler',
+    title: 'Profiler & Functional setState',
+    description: 'Using the profiler to inspect new ability to avoid re-render with functional setState',
+    route: '/profiler',
+    version: '16.4.3',
+    Component: Profiler,
   }
 };
 
