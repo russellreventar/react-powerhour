@@ -1,11 +1,21 @@
 import React from 'react';
-import PrivatePage1 from './PrivatePage1';
-import PrivatePage2 from './PrivatePage2';
+import Cat from './Cat';
+import {Mouse} from './../renderProps/RenderProps2';
 
-const HigherOrderComp1 = () =>
-  <>
-    <PrivatePage1/>
-    <PrivatePage2/>
-  </>
+const WithRenderProp = () => ( //eslint-disable-line
+  <div className='house'>
+    <Mouse
+      chaseMe={ mouse => <Cat mouse={mouse}/> }
+    />
+  </div>
+)
 
-export default HigherOrderComp1;
+const WithHigherOrderComponent = () => (
+  <div className='house'>
+    <Cat />
+  </div>
+)
+
+
+
+export default WithHigherOrderComponent;

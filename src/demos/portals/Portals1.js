@@ -1,29 +1,30 @@
 import React, {Component} from 'react';
+import AlertButton from './AlertButton';
+import Alert from './Alert';
 
-class Portals1 extends Component {
+/**-----------1-----------
+  DEMO:     Portals
+  SECTION:  No Portal
+  
+  - Alert modal opened in hidden overflow of parent is cut-off
+*/
+
+class NoPortal extends Component {
   
   state = {alert: false}
   
   toggleAlert = () => {
-    this.setState(state => ({alert: !state.alert}))
+    this.setState({alert: !this.state.alert});
   }
 
   render() {
     return (
-      <div className='dropdown'>
-        <button onClick={this.toggleAlert} className='btn btn-danger'>
-          Do not press
-        </button>
+      <>
+        <AlertButton onClick={this.toggleAlert}/>
         {this.state.alert ? <Alert/> : null}
-      </div>
+      </>
     )
   }
 }
 
-const Alert = () =>
-  <div className='alert'>
-    <h4> <>🔔</> Alert </h4>
-    <p> I told you not to press.</p>
-  </div>
-
-export default Portals1;
+export default NoPortal;

@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import Updater from './Updater';
 
+/**-----------2-----------
+  DEMO:     Updated Lifecycle
+  SECTION:  Get derived state from Props
+  
+*/
+
 class Parent extends Component {
 
   render() {

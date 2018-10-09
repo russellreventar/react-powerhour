@@ -2,29 +2,32 @@ import React, {Component} from 'react';
 import Cat from './Cat';
 import Dog from './Dog';
 
-const House2 = () => (
+/**-----------2-----------
+  DEMO:     Render Props
+  SECTION:  With Render Prop
+  
+  - pass up the state in a render prop for any use
+*/
+
+const WithRenderProp = () => (
   <div className='house'>
     <Mouse
-      chaseMe={position => 
+      chaseMe={(mouse) => (
         <>
-          <Cat position={position}/>
-          <Dog position={position}/>
+          <Cat mouse={mouse}/>
+          <Dog mouse={mouse}/>
         </>
-      }
+      )}
     />
   </div>
 )
 
-class Mouse extends Component {
+export class Mouse extends Component {
   
   state = {x: null, y: null}
 
   onMouseMove = (e) => {
-
-    this.setState({
-      x: e.clientX,
-      y: e.clientY,
-    })
+    this.setState({ x: e.clientX, y: e.clientY})
   }
 
   render() {
@@ -40,4 +43,4 @@ class Mouse extends Component {
   }
 }
 
-export default House2;
+export default WithRenderProp;

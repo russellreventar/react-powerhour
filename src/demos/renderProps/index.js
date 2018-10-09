@@ -4,7 +4,7 @@ import RenderProps2 from './RenderProps2';
 import RenderProps3 from './RenderProps3';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+export default ({demo}) => {
   const sections = [
     {
       title: 'Cant share state',
@@ -17,12 +17,12 @@ export default ({demoNumber, demo}) => {
       render: () => <RenderProps2/>,
     },
     {
-      title: "Careful using with PureComponent",
-      description: 'Be careful ',
+      title: "(optional) Careful using with PureComponent",
+      description: '',
       render: () => <RenderProps3/>
     }
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

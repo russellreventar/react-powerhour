@@ -1,46 +1,57 @@
 import React, {Component} from 'react';
+import LanguageButton from './LanguageButton';
+
+/**-----------3-----------
+  DEMO:     Context
+  SECTION:  With Context
+  
+  - language prop is only passed to consumer
+  - Nodes down the path will still re-render
+*/
 
 const LanguageContext = React.createContext();
 
-class Context2 extends Component {
+class WithContext extends Component {
 
-  state = { lang: 'en'}
+  state = { language: 'en' }
 
   toggleLanguage = () => {
     this.setState(state => ({
-      lang: state.lang === 'en' ? 'fr' : 'en'
+      language: state.language === 'en' ? 'fr' : 'en'
     }))
   }
 
   render() {
     return (
-      <LanguageContext.Provider value={this.state.lang}>
-        <button className='btn-primary' onClick={this.toggleLanguage}>
-          Toggle
-        </button>
+      <LanguageContext.Provider value={this.state.language}>
+        <LanguageButton onClick={this.toggleLanguage}/>
         <Page/>
       </LanguageContext.Provider>
     )
   }
 }
 
-const Page = () =>
-  <main>
+const Page = () => (
+  <div className="page">
     <Header/>
-  </main>
+  </div>
+)
 
-const Header = () =>
-  <header>
+const Header = () => (
+  <div className="header">
     <User/>
-  </header>
+  </div>
+)
 
-const User = () =>
+const User = () => (
   <LanguageContext.Consumer>
-    {(lang) => 
-      <div>
-        {lang}
-      </div>
-    }
+    {
+      (language) =>
+        <div className="user">
+          {language}
+        </div>
+      }
   </LanguageContext.Consumer>
+)
 
-export default Context2;
+export default WithContext;

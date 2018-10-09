@@ -1,40 +1,50 @@
 import React, {Component} from 'react';
+import LanguageButton from './LanguageButton';
 
-class Context1 extends Component {
+/**-----------1-----------
+  DEMO:     Context
+  SECTION:  No Context
+  
+  - language prop is drilled down and passed through every component to User
+  - This causes all props in the tree to render
+*/
 
-  state = { lang: 'en'}
+class NoContext extends Component {
+
+  state = { language: 'en' }
 
   toggleLanguage = () => {
     this.setState(state => ({
-      lang: state.lang === 'en' ? 'fr' : 'en'
+      language: state.language === 'en' ? 'fr' : 'en'
     }))
   }
 
   render() {
     return (
       <>
-        <button className='btn-primary' onClick={this.toggleLanguage}>
-          Toggle
-        </button>
-        <Page lang={this.state.lang}/>
+        <LanguageButton onClick={this.toggleLanguage}/>
+        <Page language={this.state.language}/>
       </>
     )
   }
 }
 
-const Page = ({lang}) =>
-  <main>
-    <Header lang={lang}/>
-  </main>
-
-const Header = ({lang}) =>
-  <header>
-    <User lang={lang}/>
-  </header>
-
-const User = ({lang}) =>
-  <div>
-    {lang}
+const Page = ({language}) => (
+  <div className="page">
+    <Header language={language}/>
   </div>
+)
 
-export default Context1;
+const Header = ({language}) => (
+  <div className="header">
+    <User language={language}/>
+  </div>
+)
+
+const User = ({language}) => (
+  <div className="user">
+    {language}
+  </div>
+)
+
+export default NoContext;

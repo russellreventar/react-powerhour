@@ -1,8 +1,13 @@
 import React from 'react';
 
-// 1.1 Table Headers
+/**-----------1-----------
+  DEMO:     Fragment
+  SECTION:  Table Headers
+  
+  - Basic Table header without fragments
+*/
 
-const Fragment1 = () => {
+const TableHeaders = () => {
   return (
     <table>
       <thead>
@@ -15,4 +20,4 @@ const Fragment1 = () => {
   )
 }
 
-export default Fragment1;
+export default TableHeaders;

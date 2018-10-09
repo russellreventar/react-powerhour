@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import Updater from './Updater';
 
+/**-----------1-----------
+  DEMO:     Updated Lifecycle
+  SECTION:  Component Will Recieve Props
+  
+*/
+
 class Parent extends Component {
 
   render() {

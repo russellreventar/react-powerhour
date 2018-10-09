@@ -3,7 +3,7 @@ import Portals1 from './Portals1';
 import Portals2 from './Portals2';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+export default ({demo}) => {
   const sections = [
     {
       title: 'Alert popup',
@@ -17,6 +17,6 @@ export default ({demoNumber, demo}) => {
     },
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

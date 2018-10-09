@@ -1,14 +1,27 @@
 import React, {Component} from 'react';
 import FakeComponentTree from './FakeComponentTree';
 
-const incrementer = (state, props) => {
+/**-----------2-----------
+  DEMO:     Profiler & Functional SetState
+  SECTION:  Functional SetState
+  
+  - passing a function to setstate allows to mutate state
+  - can return null to prevent re-render
+  - use current state values that are reliable
+  - decouple state logie (good for testing)
+  - re-usable
+*/
 
-  if(state.count >= 3) {
+const incrementer = (inc) => (state, props) => {
+
+  const newCount = state.count + inc;
+
+  if(newCount > 3) {
     return null;
   }
 
   return {
-    count: state.count + 1
+    count: newCount
   };
 }
 
@@ -16,24 +29,20 @@ class FunctionSetState extends Component {
 
   state = {count: 0}
 
-  handleIncrement = () => {
-    this.setState(incrementer);
+  handleIncrement = (inc) => () => {
+    this.setState(incrementer(inc));
   };
 
   render() {
     return (
       <>
-        <input id="check" type="checkbox"/>
-        <div id='t1'>
-          asd
-        </div>
-        <div id='t2'>
-          asd
-        </div>
+        <button onClick={this.handleIncrement(-1)} className='btn btn-danger'>
+          -
+        </button>
         <div className='count'>
           {this.state.count}
         </div>
-        <button className='btn btn-success inc' onClick={this.handleIncrement}>
+        <button onClick={this.handleIncrement(1)} className='btn btn-success'>
           +
         </button>
         <FakeComponentTree/>

@@ -1,18 +1,10 @@
-import React, {Component} from 'react';
-import PrivatePage1 from './PrivatePage1';
-import PrivatePage2 from './PrivatePage2';
+import React from 'react';
+import Dog from './Dog';
 
-class HigherOrderComp1 extends Component {
+const ChainedHigherOrderComponent = () => (
+  <div className='house'>
+    <Dog />
+  </div>
+)
 
-  render() {
-    return (
-      <>
-        <button className='btn btn-warning' onClick={() => this.setState({})}>render</button>
-        <PrivatePage1/>
-        <PrivatePage2/>
-      </>
-    )
-  }
-}
-
-export default HigherOrderComp1;
+export default ChainedHigherOrderComponent;

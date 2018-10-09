@@ -1,40 +1,27 @@
 import React from 'react';
 
-//1.3
-const Fragment3 = () => {
+/**-----------3-----------
+  DEMO:     Fragment
+  SECTION:  Table Headers with Fragments inside a MAP
+  
+  - you can add keys to fragments as you map over an array
+*/
 
-  const headers = [
-    {
-      id: 1,
-      name: 'Dogs',
-    },
-    {
-      id: 2,
-      name: 'Cats',
-    },
-    {
-      id: 3,
-      name: 'Birds',
-    },
-  ];
+const HeadersFragmentMap = ({headers}) => (
+  <table>
+    <thead>
+      <tr>
+        {
+          headers.map(th => (
+            <React.Fragment key={th.id}>
+              <th>{th.name}</th>
+              <th> </th>
+            </React.Fragment>
+          ))
+        }
+      </tr>
+    </thead>
+  </table>
+)
 
-  const HeadersMap = () =>
-    headers.map(header =>
-      <React.Fragment key={header.id}>
-        <th>{header.name}</th>
-        <th> </th>
-      </React.Fragment>
-    )
-
-  return (
-    <table>
-      <thead>
-        <tr>
-          <HeadersMap/>
-        </tr>
-      </thead>
-    </table>
-  )
-}
-
-export default Fragment3;
+export default HeadersFragmentMap;

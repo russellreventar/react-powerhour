@@ -4,11 +4,26 @@ import Fragment2 from './Fragment2';
 import Fragment3 from './Fragment3';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+const headers = [
+  {
+    id: 1,
+    name: 'Dogs',
+  },
+  {
+    id: 2,
+    name: 'Cats',
+  },
+  {
+    id: 3,
+    name: 'Birds',
+  },
+];
+
+export default ({demo}) => {
+
   const sections = [
     {
-      title: 'Table Headers',
-      description: 'A Basic Header',
+      title: 'Basic table headers',
       render: () => <Fragment1/>,
     },
     {
@@ -19,10 +34,10 @@ export default ({demoNumber, demo}) => {
     {
       title: "Table Headers with Map",
       description: 'Add empty column to the right of each header',
-      render: () => <Fragment3/>
+      render: () => <Fragment3 headers={headers}/>
     }
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

@@ -3,7 +3,7 @@ import ErrorBoundary1 from './ErrorBoundary1';
 import ErrorBoundary2 from './ErrorBoundary2';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+export default ({demo}) => {
   const sections = [
     {
       title: 'Buggy Counter',
@@ -17,6 +17,6 @@ export default ({demoNumber, demo}) => {
     },
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

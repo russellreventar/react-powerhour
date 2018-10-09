@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import Cat from './Cat';
 
-const House1 = () => (
+/**-----------1-----------
+  DEMO:     Render Props
+  SECTION:  No Render Props
+  
+  - Follow the mouse with Cat component
+  - restricted to be inside the Mouse to have acces to state
+*/
+
+const NoRenderProp = () => (
   <div className='house'>
     <Mouse/>
   </div>
@@ -12,10 +20,7 @@ class Mouse extends Component {
   state = {x: null, y: null}
 
   onMouseMove = (e) => {
-    this.setState({
-      x: e.clientX,
-      y: e.clientY,
-    })
+    this.setState({ x: e.clientX, y: e.clientY})
   }
 
   render() {
@@ -24,10 +29,10 @@ class Mouse extends Component {
     return (
       <div className="mouse" onMouseMove={this.onMouseMove}>
         {`Mouse position: x: ${x} y: ${y}`}
-        <Cat position={this.state}/>
+        <Cat mouse={this.state}/>
       </div>
     )
   }
 }
 
-export default House1;
+export default NoRenderProp;

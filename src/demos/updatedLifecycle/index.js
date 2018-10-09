@@ -3,7 +3,7 @@ import UnsafeWillRecieve from './UnsafeWillRecieve';
 import DerivedState from './DerivedState';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+export default ({demo}) => {
   const sections = [
     {
       title: "UNSAFE_componentWillRecieveProps",
@@ -15,6 +15,6 @@ export default ({demoNumber, demo}) => {
     }
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

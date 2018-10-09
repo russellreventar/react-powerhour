@@ -1,4 +1,5 @@
 import React from 'react';
+import withMouse from './withMouse';
 
 const Cat = ({mouse}) => {
   return (
@@ -6,4 +7,4 @@ const Cat = ({mouse}) => {
   )
 }
 
-export default Cat;
+export default withMouse(Cat);

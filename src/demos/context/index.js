@@ -4,7 +4,7 @@ import Context2 from './Context2';
 import Context3 from './Context3';
 import DemoContent from './../../components/DemoContent';
 
-export default ({demoNumber, demo}) => {
+export default ({demo}) => {
   const sections = [
     {
       title: 'Language Toggle',
@@ -17,12 +17,12 @@ export default ({demoNumber, demo}) => {
       render: () => <Context2/>,
     },
     {
-      title: "Language Toggle using Context",
-      description: 'Avoid prop drilling by providing language',
+      title: "Allow consumers to update context",
+      description: 'Pass in functions through context so consumers can update state',
       render: () => <Context3/>,
     },
   ];
 
-  return <DemoContent demo={demo} demoNumber={demoNumber} sections={sections}/>
+  return <DemoContent demo={demo} sections={sections}/>
 }
   

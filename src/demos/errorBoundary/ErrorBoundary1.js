@@ -1,25 +1,18 @@
 import React from 'react';
+import BuggyCounter from './BuggyCounter';
 
-class BuggyCounter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-    this.handleClick = this.handleClick.bind(this);
-  }
+/**-----------1-----------
+  DEMO:     Error Boundaries
+  SECTION:  No ErrorBoundary
   
-  handleClick() {
-    this.setState(({counter}) => ({
-      counter: counter + 1
-    }));
-  }
-  
-  render() {
-    if (this.state.counter === 5) {
-      // Simulate a JS error
-      throw new Error('I crashed!');
-    }
-    return <h1 onClick={this.handleClick}>{this.state.counter}</h1>;
-  }
-}
+  - simulate an error occuring inside a component that crashes the app
+  - CRA dev mode, will show error screen. once you close youll see app crashed
+*/
 
-export default BuggyCounter;
+const NoBoundary = () => (
+  <>
+    <BuggyCounter/>
+  </>
+)
+
+export default NoBoundary;

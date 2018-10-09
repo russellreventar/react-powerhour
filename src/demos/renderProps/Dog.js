@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Dog = ({position}) => {
+const Dog = ({mouse}) => {
   const offset = 10;
 
   return (
     <div className='dog' style={{
-      left: position.x + offset,
-      top: position.y + offset
+      left: mouse.x + offset,
+      top: mouse.y + offset
     }}/>
   )
 }

@@ -1,22 +1,30 @@
 import React, {Component} from 'react';
+import LanguageButton from './LanguageButton';
+
+/**-----------3-----------
+  DEMO:     Context
+  SECTION:  Context with update
+  
+  - Pass functions with context to allow updates to state from consumers
+*/
 
 const LanguageContext = React.createContext();
 
-class Context3 extends Component {
+class ContextWithUpdate extends Component {
 
-  state = { lang: 'en'}
+  state = { language: 'en' }
 
-  toggleLang = () => {
+  toggleLanguage = () => {
     this.setState(state => ({
-      lang: state.lang === 'en' ? 'fr' : 'en'
+      language: state.language === 'en' ? 'fr' : 'en'
     }))
   }
 
   render() {
     return (
       <LanguageContext.Provider value={{
-        lang: this.state.lang,
-        toggleLang: this.toggleLang
+        language: this.state.language,
+        toggleLanguage: this.toggleLanguage
       }}>
         <Page/>
       </LanguageContext.Provider>
@@ -24,26 +32,33 @@ class Context3 extends Component {
   }
 }
 
-const Page = () =>
-  <main>
-    <Header/>
-  </main>
+const Page = () => (
+  <LanguageContext.Consumer>
+    {
+      ({language}) =>
+        <div className="page">
+          {language}
+          <Header/>
+        </div>
+    }
+  </LanguageContext.Consumer>
+)
 
-const Header = () =>
-  <header>
+const Header = () => (
+  <div className="header">
     <User/>
-  </header>
+  </div>
+)
 
 const User = () =>
   <LanguageContext.Consumer>
-    {({lang, toggleLang}) => 
-      <div>
-        <button className='btn-primary' onClick={toggleLang}>
-          Toggle
-        </button>
-        {lang}
-      </div>
+    {
+      ({language, toggleLanguage}) =>
+        <div className="user">
+          <LanguageButton onClick={toggleLanguage}/>
+          {language}
+        </div>
     }
   </LanguageContext.Consumer>
 
-export default Context3;
+export default ContextWithUpdate;

@@ -4,15 +4,12 @@ import Dog from './Dog';
 
 class House3 extends Component {
   
-  toggle = () => {
-    this.setState({});
-  }
 
-  animalChase = (position) => {
+  animalChase = (mouse) => {
     return (
       <>
-        <Cat position={position}/>
-        <Dog position={position}/>
+        <Cat mouse={mouse}/>
+        <Dog mouse={mouse}/>
       </>
     )
   }
@@ -20,7 +17,7 @@ class House3 extends Component {
   render() {
     return (
       <div className='house'>
-        <button className='btn btn-warning' onClick={this.toggle}>
+        <button className='btn btn-warning' onClick={() => this.setState()}>
           Render
         </button>
         <Mouse
@@ -38,10 +35,7 @@ class Mouse extends PureComponent {
   state = {x: null, y: null}
   
   onMouseMove = (e) => {
-    this.setState({
-      x: e.clientX,
-      y: e.clientY,
-    })
+    this.setState({ x: e.clientX, y: e.clientY})
   }
 
   render() {

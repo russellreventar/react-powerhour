@@ -1,5 +1,14 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import Alert from './Alert';
+
+/**-----------2-----------
+  DEMO:     Portals
+  SECTION:  Portal and Button event bubbling
+  
+  - Use portal to transport <Alert/> to the body.
+  - showcase event bubbling. A click on button in <Alert> bubbles to parent <div>
+*/
 
 class Portals2 extends Component {
   
@@ -28,12 +37,5 @@ class Portals2 extends Component {
     )
   }
 }
-
-const Alert = () =>
-  <div className='alert'>
-    <h4> <>🔔</> Alert </h4>
-    <p> I told you not to press.</p>
-    <button className='btn btn-secondary'>Close me</button>
-  </div>
 
 export default Portals2;

@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
 import FakeComponentTree from './FakeComponentTree';
 
+/**-----------1-----------
+  DEMO:     Profiler & Functional SetState
+  SECTION:  SetState
+  
+  - discuss the risks of using normal this.setState
+  - setState is asynchronous, value can is not reliable and u can mutate it
+  - when set state is called, it will always trigger a re-render
+*/
+
+
 class SetState extends Component {
 
   state = {count: 0}

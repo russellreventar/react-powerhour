@@ -1,26 +1,29 @@
 import React from 'react';
 
-// 1.2
-const Fragment2 = () => {
+/**-----------2-----------
+  DEMO:     Fragment
+  SECTION:  Table Headers with Fragments
   
-  // array, .Fragment, <>
-  const Headers = () =>
-    <>
-      <th>Header 1</th>
-      <th>Header 2</th>
-      <th>Header 3</th>
-      <th>Header 4</th>
-    </>
+  - evolution from using span > array > React.Fragment > <>
+*/
 
-  return (
-    <table>
-      <thead>
-        <tr>
-          <Headers/>
-        </tr>
-      </thead>
-    </table>
-  )
-}
+const Headers = () => (
+  <>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+    <th>Header 4</th>
+  </>
+)
 
-export default Fragment2;
+const HeadersFragment = () => (
+  <table>
+    <thead>
+      <tr>
+        <Headers/>
+      </tr>
+    </thead>
+  </table>
+)
+
+export default HeadersFragment;

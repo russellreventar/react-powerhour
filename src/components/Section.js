@@ -21,7 +21,7 @@ class Section extends Component {
 
   render() {
     const {collapse} = this.state;
-    const {demo, section, demoNumber, sectionNumber} = this.props;
+    const {demo, section, sectionNumber} = this.props;
     return (
       <div className={`section ${demo.id}_${sectionNumber}`}>
         <div className='section__header'>
@@ -31,7 +31,7 @@ class Section extends Component {
               alt='open'
               src={collapse ? collapseImg : expandImg}
             />
-            <span className='section-number'>{demoNumber}.{sectionNumber})</span> {section.title}
+            <span className='section-number'>{demo.number}.{sectionNumber})</span> {section.title}
           </h3>
           {section.description ? <p className='description'>{section.description}</p> : null}
         </div>
