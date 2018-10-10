@@ -11,14 +11,7 @@ const HeadersFragmentMap = ({headers}) => (
   <table>
     <thead>
       <tr>
-        {
-          headers.map(th => (
-            <React.Fragment key={th.id}>
-              <th>{th.name}</th>
-              <th> </th>
-            </React.Fragment>
-          ))
-        }
+        {/* render headers with empty column in between each*/}
       </tr>
     </thead>
   </table>
