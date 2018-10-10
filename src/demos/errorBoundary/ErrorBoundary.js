@@ -4,23 +4,14 @@ import ErrorDisplay from './ErrorDisplay';
 class ErrorBoundary extends React.Component {
 
   state = { error: null, errorInfo: null };
-  
-  componentDidCatch(error, errorInfo) {
-
-    errorLoggerService(error, errorInfo);
-    this.setState({
-      error: error && error.toString(),
-      errorInfo: errorInfo
-    })
-  }
-  
+    
   render() {
 
     const {error, errorInfo} = this.state;
 
-    if (errorInfo) {
+    if (error) {
       return (
-        <ErrorDisplay error={error} errorStack={errorInfo.componentStack}/>
+        <ErrorDisplay error={error} errorInfo={errorInfo}/>
       );
     } else {
       return this.props.children;
