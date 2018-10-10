@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 import Alert from './Alert';
+import AlertButton from './AlertButton';
+import ReactDOM from 'react-dom';
 
 /**-----------2-----------
   DEMO:     Portals
@@ -20,20 +21,19 @@ class Portals2 extends Component {
 
   render() {
     return (
-      <div className='dropdown'>
-        <button onClick={this.toggleAlert} className='btn btn-danger'>
-          Do not press
-        </button>
+      <>
+        <AlertButton onClick={this.toggleAlert}/>
         <div onClick={this.toggleAlert}>
-          {this.state.alert ?
-            ReactDOM.createPortal(
-              <Alert/>,
-              document.body
-            )
-            : null
+          {
+            this.state.alert ? (
+              ReactDOM.createPortal(
+                <Alert/>,
+                document.body
+              )
+            ) : null
           }
         </div>
-      </div>
+      </>
     )
   }
 }
