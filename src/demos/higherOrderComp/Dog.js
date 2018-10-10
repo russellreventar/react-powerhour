@@ -13,13 +13,7 @@ const Dog = ({mouse}) => {
   )
 }
 
-const withOpacity = (opacity) => (InnerComponent) => (props) => (
-  <span style={{opacity}}>
-    <InnerComponent {...props}/>
-  </span>
-)
+//withOpacity
 
-export default compose(
-  withMouse,
-  withOpacity(0.4)
-)(Dog);
+//hoc chain
+export default Dog;

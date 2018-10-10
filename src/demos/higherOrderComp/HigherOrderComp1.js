@@ -14,7 +14,6 @@ const WithRenderProp = () => ( //eslint-disable-line
 const WithHigherOrderComponent = () => (
   <div className='house'>
     <Cat/>
-    <Dog/>
   </div>
 )
 
