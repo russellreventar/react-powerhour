@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorDisplay from './ErrorDisplay';
 
 class ErrorBoundary extends React.Component {
 
@@ -19,18 +20,12 @@ class ErrorBoundary extends React.Component {
 
     if (errorInfo) {
       return (
-        <div>
-          <h5>Ergh, I crashed</h5>
-          <details>
-            {error}
-            <br />
-            {errorInfo.componentStack}
-          </details>
-        </div>
+        <ErrorDisplay error={error} errorStack={errorInfo.componentStack}/>
       );
+    } else {
+      return this.props.children;
     }
 
-    return this.props.children;
   }  
 }
 
