@@ -1,13 +1,13 @@
 import React from 'react';
-import UnsafeWillRecieve from './UnsafeWillRecieve';
+import WillRecieve from './WillRecieve';
 import DerivedState from './DerivedState';
 import DemoContent from './../../components/DemoContent';
 
 export default ({demo}) => {
   const sections = [
     {
-      title: "UNSAFE_componentWillRecieveProps",
-      render: () => <UnsafeWillRecieve/>,
+      title: "componentWillRecieveProps",
+      render: () => <WillRecieve/>,
     },
     {
       title: "getDerivedStateFromProps",

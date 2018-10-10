@@ -7,6 +7,7 @@ import Dog from './Dog';
   SECTION:  With Render Prop
   
   - pass up the state in a render prop for any use
+  - touch on warning when using render prop with PureComponent
 */
 
 const WithRenderProp = () => (

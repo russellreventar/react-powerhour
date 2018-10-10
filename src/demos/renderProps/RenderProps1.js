@@ -7,6 +7,7 @@ import Cat from './Cat';
   
   - Follow the mouse with Cat component
   - restricted to be inside the Mouse to have acces to state
+  - we could lift state up, but that defies the whole excapsulation of Mouse
 */
 
 const NoRenderProp = () => (

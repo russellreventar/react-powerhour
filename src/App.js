@@ -37,7 +37,7 @@ class Sidebar extends Component {
           </div>
           <ul>
             {DEMOS_ORDER.map((id, index) =>
-              <li key={id}>
+              <li key={id} style={{opacity: DEMOS[id].extra ? 0.4 : 1}}>
                 <Link onClick={this.toggle(false)} to={DEMOS[id].route}>
                   {index + 1}) {DEMOS[id].title}
                 </Link>

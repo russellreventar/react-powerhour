@@ -17,5 +17,4 @@ const WithHigherOrderComponent = () => (
 )
 
 
-
 export default WithHigherOrderComponent;

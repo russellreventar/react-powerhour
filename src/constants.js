@@ -6,6 +6,7 @@ import HigherOrderComp from './demos/higherOrderComp';
 import RenderProps from './demos/renderProps';
 import UpdateLifecycle from './demos/updatedLifecycle';
 import Profiler from './demos/profiler';
+import Refs from './demos/refs';
 
 export const DEMOS_ORDER = [
   'fragment',
@@ -13,6 +14,7 @@ export const DEMOS_ORDER = [
   'errorBoundary',
   'profiler',
   'context',
+  'refs',
   'renderProps',
   'higherOrderComp',
   'updatedLifecycle'
@@ -23,7 +25,6 @@ export const DEMOS = {
     id: 'fragment',
     title: 'Fragment',
     description: 'Group a list of children without adding extra nodes to the DOM.',
-    version: '16.3.4',
     route: '/fragment',
     Component: Fragment,
   },
@@ -32,7 +33,6 @@ export const DEMOS = {
     title: 'Context',
     description: 'Data moves through the component tree without having to pass props down at every level.',
     route: '/context',
-    version: '16.4.3',
     Component: Context,
   },
   errorBoundary: {
@@ -40,7 +40,6 @@ export const DEMOS = {
     title: 'Error Boundaries',
     description: 'Catch JavaScript errors anywhere in their child component tree',
     route: '/error-boundary',
-    version: '16.4.3',
     Component: ErrorBoundary,
   },
   portals: {
@@ -48,7 +47,6 @@ export const DEMOS = {
     title: 'Portals',
     description: 'Render children to any DOM node outside of parent',
     route: '/portals',
-    version: '16.4.3',
     Component: Portals,
   },
   higherOrderComp: {
@@ -56,31 +54,37 @@ export const DEMOS = {
     title: 'Higher-Order Components',
     description: 'Technique to reuse component logic',
     route: '/higher-order-components',
-    version: '16.4.3',
     Component: HigherOrderComp,
+    extra: true
   },
   renderProps: {
     id: 'renderProps',
     title: 'Render Props',
     description: 'Technique to reuse component logic',
     route: '/render-props',
-    version: '16.4.3',
     Component: RenderProps,
+    extra: true
   },
   updatedLifecycle: {
     id: 'updatedLifecycle',
     title: 'Updated Lifecycle Methods',
     description: 'componentWillRecieveProps  !==  getDerivedStateFromProps',
     route: '/updated-lifecycle',
-    version: '16.4.3',
     Component: UpdateLifecycle,
+    extra: true
   },
   profiler: {
     id: 'profiler',
     title: 'Profiler & Functional setState',
     description: 'Using the profiler to inspect new ability to avoid re-render with functional setState',
     route: '/profiler',
-    version: '16.4.3',
     Component: Profiler,
+  },
+  refs: {
+    id: 'refs',
+    title: 'Refs',
+    description: 'Create & Forward refs to access DOM node properties',
+    route: '/refs',
+    Component: Refs,
   }
 };
