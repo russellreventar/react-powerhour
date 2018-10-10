@@ -15,7 +15,7 @@ class Portals2 extends Component {
   state = {alert: false}
   
   toggleAlert = () => {
-    this.setState(state => ({alert: !state.alert}))
+    this.setState({alert: !this.state.alert});
   }
 
   render() {
