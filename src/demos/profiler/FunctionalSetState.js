@@ -12,37 +12,23 @@ import FakeComponentTree from './FakeComponentTree';
   - re-usable
 */
 
-const incrementer = (inc) => (state, props) => {
-
-  const newCount = state.count + inc;
-
-  if(newCount > 3) {
-    return null;
-  }
-
-  return {
-    count: newCount
-  };
-}
-
 class FunctionSetState extends Component {
 
   state = {count: 0}
 
-  handleIncrement = (inc) => () => {
-    this.setState(incrementer(inc));
+  handleIncrement = () => {
+    this.setState({
+      count: this.state.count < 3 ? this.state.count + 1 : this.state.count
+    });
   };
 
   render() {
     return (
       <>
-        <button onClick={this.handleIncrement(-1)} className='btn btn-danger'>
-          -
-        </button>
         <div className='count'>
           {this.state.count}
         </div>
-        <button onClick={this.handleIncrement(1)} className='btn btn-success'>
+        <button className='btn btn-success inc' onClick={this.handleIncrement}>
           +
         </button>
         <FakeComponentTree/>
