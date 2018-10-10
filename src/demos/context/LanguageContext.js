@@ -1,1 +1,0 @@
-const LanguageContext = React.createContext();
