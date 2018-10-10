@@ -22,10 +22,8 @@ class ContextWithUpdate extends Component {
 
   render() {
     return (
-      <LanguageContext.Provider value={{
-        language: this.state.language,
-        toggleLanguage: this.toggleLanguage
-      }}>
+      <LanguageContext.Provider value={this.state.language}>
+        <LanguageButton onClick={this.toggleLanguage}/>
         <Page/>
       </LanguageContext.Provider>
     )
@@ -33,15 +31,9 @@ class ContextWithUpdate extends Component {
 }
 
 const Page = () => (
-  <LanguageContext.Consumer>
-    {
-      ({language}) =>
-        <div className="page">
-          {language}
-          <Header/>
-        </div>
-    }
-  </LanguageContext.Consumer>
+  <div className="page">
+    <Header/>
+  </div>
 )
 
 const Header = () => (
@@ -50,15 +42,16 @@ const Header = () => (
   </div>
 )
 
-const User = () =>
+const User = () => (
   <LanguageContext.Consumer>
     {
-      ({language, toggleLanguage}) =>
+      (language) =>
         <div className="user">
-          <LanguageButton onClick={toggleLanguage}/>
           {language}
         </div>
-    }
+      }
   </LanguageContext.Consumer>
+)
+
 
 export default ContextWithUpdate;
