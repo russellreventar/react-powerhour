@@ -8,8 +8,6 @@ import LanguageButton from './LanguageButton';
   - Pass functions with context to allow updates to state from consumers
 */
 
-const LanguageContext = React.createContext();
-
 class ContextWithUpdate extends Component {
 
   state = { language: 'en' }
@@ -22,43 +20,30 @@ class ContextWithUpdate extends Component {
 
   render() {
     return (
-      <LanguageContext.Provider value={{
-        language: this.state.language,
-        toggleLanguage: this.toggleLanguage
-      }}>
-        <Page/>
-      </LanguageContext.Provider>
+      <>
+        <LanguageButton onClick={this.toggleLanguage}/>
+        <Page language={this.state.language}/>
+      </>
     )
   }
 }
 
-const Page = () => (
-  <LanguageContext.Consumer>
-    {
-      ({language}) =>
-        <div className="page">
-          {language}
-          <Header/>
-        </div>
-    }
-  </LanguageContext.Consumer>
-)
-
-const Header = () => (
-  <div className="header">
-    <User/>
+const Page = ({language}) => (
+  <div className="page">
+    <Header language={language}/>
   </div>
 )
 
-const User = () =>
-  <LanguageContext.Consumer>
-    {
-      ({language, toggleLanguage}) =>
-        <div className="user">
-          <LanguageButton onClick={toggleLanguage}/>
-          {language}
-        </div>
-    }
-  </LanguageContext.Consumer>
+const Header = ({language}) => (
+  <div className="header">
+    <User language={language}/>
+  </div>
+)
+
+const User = ({language}) => (
+  <div className="user">
+    {language}
+  </div>
+)
 
 export default ContextWithUpdate;
