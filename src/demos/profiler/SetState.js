@@ -27,7 +27,7 @@ class SetState extends Component {
         <div className='count'>
           {this.state.count}
         </div>
-        <button className='btn btn-success inc' onClick={this.handleIncrement}>
+        <button className='btn btn-success' onClick={this.handleIncrement}>
           +
         </button>
         <FakeComponentTree/>
