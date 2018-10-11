@@ -1,0 +1,45 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+      "path": "src/demos/fragment"
+    },
+		{
+      "path": "src/demos/portals"
+    },
+    {
+      "path": "src/demos/errorBoundary"
+    },
+    {
+      "path": "src/demos/profiler"
+    },
+    {
+      "path": "src/demos/context"
+    },
+    {
+      "path": "src/demos/refs"
+    },
+    {
+      "path": "src/demos/renderProps"
+    },
+    {
+      "path": "src/demos/higherOrderComp"
+    },
+    {
+      "path": "src/demos/updatedLifecycle"
+    },
+	],
+	"settings": {
+    "search.exclude": {
+      "**/__tests__": true,
+      "**/.git": true,
+      "**/node_modules": true,
+      "**/bower_components": true,
+      "**/wwwroot": true,
+      "**/coverage":true,
+      "**/dist":true
+    }
+  }
+}
