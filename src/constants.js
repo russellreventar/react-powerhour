@@ -82,7 +82,7 @@ export const DEMOS = {
   },
   refs: {
     id: 'refs',
-    title: 'Refs',
+    title: 'New Refs',
     description: 'Create & Forward refs to access DOM node properties',
     route: '/refs',
     Component: Refs,
