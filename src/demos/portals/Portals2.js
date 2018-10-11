@@ -23,7 +23,11 @@ class Portals2 extends Component {
     return (
       <>
         <AlertButton onClick={this.toggleAlert}/>
-        {this.state.alert ? <Alert/> : null}
+        <div onClick={this.toggleAlert}>
+          {this.state.alert ? (
+            ReactDOM.createPortal(<Alert/>, document.body)
+          ) : null}
+        </div>
       </>
     )
   }

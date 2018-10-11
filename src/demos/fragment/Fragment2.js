@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 
 /**-----------2-----------
   DEMO:     Fragment
@@ -8,12 +8,12 @@ import React from 'react';
 */
 
 const Headers = () => (
-  <span>
+  <>
     <th>Header 1</th>
     <th>Header 2</th>
     <th>Header 3</th>
     <th>Header 4</th>
-  </span>
+  </>
 )
 
 const HeadersFragment = () => (

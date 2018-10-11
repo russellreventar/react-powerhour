@@ -4,7 +4,11 @@ import ErrorDisplay from './ErrorDisplay';
 class ErrorBoundary extends React.Component {
 
   state = { error: null, errorInfo: null };
-    
+  
+  componentDidCatch(error, errorInfo) {
+    this.setState({error, errorInfo})
+  }
+
   render() {
 
     const {error, errorInfo} = this.state;

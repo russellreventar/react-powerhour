@@ -18,10 +18,14 @@ class ForwardRef extends React.Component {
         <button className="btn btn-primary" onClick={this.focusTextInput}>
           Focus
         </button>
-        <input className="form-control" type="text" ref={this.textInput} />
+        <TextInput ref={this.textInput}/>
       </div>
     );
   }
 }
+
+const TextInput = React.forwardRef(
+  (props, ref) => <input className="form-control" type="text" ref={ref}/>
+)
 
 export default ForwardRef;

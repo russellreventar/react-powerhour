@@ -11,24 +11,33 @@ import FakeComponentTree from './FakeComponentTree';
   - decouple state logie (good for testing)
   - re-usable
 */
+const inc = (i) => (state) => {
+
+  if(state.count >= 3) return null
+
+  return {
+    count: state.count + i
+  }
+}
 
 class FunctionSetState extends Component {
 
   state = {count: 0}
 
-  handleIncrement = () => {
-    this.setState({
-      count: this.state.count < 3 ? this.state.count + 1 : this.state.count
-    });
+  handleIncrement = (i) => () => {
+    this.setState(inc(i));
   };
 
   render() {
     return (
       <>
+        <button className='btn btn-danger' onClick={this.handleIncrement(-1)}>
+          -
+        </button>
         <div className='count'>
           {this.state.count}
         </div>
-        <button className='btn btn-success' onClick={this.handleIncrement}>
+        <button className='btn btn-success' onClick={this.handleIncrement(1)}>
           +
         </button>
         <FakeComponentTree/>

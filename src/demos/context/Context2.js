@@ -9,6 +9,9 @@ import LanguageButton from './LanguageButton';
   - Nodes down the path will still re-render
 */
 
+const LanguageContext = React.createContext();
+
+
 class WithContext extends Component {
 
   state = { language: 'en' }
@@ -21,30 +24,34 @@ class WithContext extends Component {
 
   render() {
     return (
-      <>
+      <LanguageContext.Provider value={this.state.language}>
         <LanguageButton onClick={this.toggleLanguage}/>
         <Page language={this.state.language}/>
-      </>
+      </LanguageContext.Provider>
     )
   }
 }
 
-const Page = ({language}) => (
+const Page = () => (
   <div className="page">
-    <Header language={language}/>
+    <Header/>
   </div>
 )
 
-const Header = ({language}) => (
+const Header = () => (
   <div className="header">
-    <User language={language}/>
+    <User/>
   </div>
 )
 
-const User = ({language}) => (
-  <div className="user">
-    {language}
-  </div>
+const User = () => (
+  <LanguageContext.Consumer>
+    {(language) => (
+      <div className="user">
+        {language}
+      </div>
+    )}
+  </LanguageContext.Consumer>
 )
 
 export default WithContext;
