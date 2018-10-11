@@ -15,9 +15,7 @@ import ErrorBoundary from './ErrorBoundary';
 const WithErrorBoundaries = () => {
   return (
     <>
-      <ErrorBoundary>
-        <BuggyCounter/>
-      </ErrorBoundary>
+      <BuggyCounter/>
     </>
   )
 }
