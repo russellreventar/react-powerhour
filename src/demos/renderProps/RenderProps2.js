@@ -12,14 +12,7 @@ import Dog from './Dog';
 
 const WithRenderProp = () => (
   <div className='house'>
-    <Mouse
-      chaseMe={(mouse) => (
-        <>
-          <Cat mouse={mouse}/>
-          <Dog mouse={mouse}/>
-        </>
-      )}
-    />
+    <Mouse/>
   </div>
 )
 
@@ -32,16 +25,14 @@ export class Mouse extends Component {
   }
 
   render() {
-    const {chaseMe} = this.props;
     const {x, y} = this.state;
 
     return (
       <div className="mouse" onMouseMove={this.onMouseMove}>
         {`Mouse position: x: ${x} y: ${y}`}
-        {chaseMe(this.state)}
+        <Cat mouse={this.state}/>
       </div>
     )
   }
 }
-
 export default WithRenderProp;
