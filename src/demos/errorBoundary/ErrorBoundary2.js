@@ -18,9 +18,6 @@ const WithErrorBoundaries = () => {
       <ErrorBoundary>
         <BuggyCounter/>
       </ErrorBoundary>
-      <ErrorBoundary>
-        <BuggyCounter/>
-      </ErrorBoundary>
     </>
   )
 }
