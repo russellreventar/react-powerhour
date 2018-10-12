@@ -7,6 +7,8 @@ import closeImage from './assets/left-arrow.svg';
 import {DEMOS_ORDER, DEMOS} from './constants';
 import './styles/App.scss';
 
+const POWERHOUR_TITLE = 'React 16 - Whats New';
+
 class App extends Component {
   render() {
     return (
@@ -53,7 +55,7 @@ class Sidebar extends Component {
 
 const Header = () =>
   <header>
-    <div className='title'>React 16 - What's New</div>
+    <div className='title'>{POWERHOUR_TITLE}</div>
   </header>
 
 const Main = () =>

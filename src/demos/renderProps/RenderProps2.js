@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Cat from './Cat';
-import Dog from './Dog';
 
 /**-----------2-----------
   DEMO:     Render Props

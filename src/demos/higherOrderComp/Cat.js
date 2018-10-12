@@ -7,4 +7,4 @@ const Cat = ({mouse = {x:null, y: null}}) => {
   )
 }
 
-export default Cat;
+export default withMouse(Cat);

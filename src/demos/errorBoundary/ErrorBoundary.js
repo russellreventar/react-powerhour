@@ -24,7 +24,7 @@ class ErrorBoundary extends React.Component {
   }  
 }
 
-const errorLoggerService = (error, errorInfo) => {
+const errorLoggerService = (error, errorInfo) => { //eslint-disable-line
   console.log('Error: ', error);
   console.log('Error Info: ', errorInfo);
 };

@@ -55,7 +55,7 @@ export const DEMOS = {
     description: 'Technique to reuse component logic',
     route: '/higher-order-components',
     Component: HigherOrderComp,
-    extra: true
+    extra: false
   },
   renderProps: {
     id: 'renderProps',
@@ -63,7 +63,7 @@ export const DEMOS = {
     description: 'Technique to reuse component logic',
     route: '/render-props',
     Component: RenderProps,
-    extra: true
+    extra: false
   },
   updatedLifecycle: {
     id: 'updatedLifecycle',
@@ -71,7 +71,7 @@ export const DEMOS = {
     description: 'componentWillRecieveProps  !==  getDerivedStateFromProps',
     route: '/updated-lifecycle',
     Component: UpdateLifecycle,
-    extra: true
+    extra: false
   },
   profiler: {
     id: 'profiler',
